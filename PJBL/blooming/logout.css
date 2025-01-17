@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes up the full height */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: #fff;
+    padding: 20px;
+    height: 100%; /* Full height of the sidebar */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: #575757;
+}
+
+
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.popup-content {
+    background-color: #fff; /* White background for the popup */
+    margin: 15% auto; /* Center the popup */
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Fixed width for the popup */
+    text-align: center; /* Center text */
+}
+
+.close {
+    color: #aaa; /* Light gray color for the close button */
+    float: right; /* Position close button to the right */
+    font-size: 28px; /* Font size for the close button */
+    font-weight: bold; /* Bold text for the close button */
+}
+
+.close:hover,
+.close:focus {
+    color: #000; /* Change color on hover */
+    text-decoration: none; /* Remove underline */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+/* Button styles to match the rest of the dashboard */
+.btn {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Add margin to separate buttons from text */
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    display: flex; /* Use flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    flex-direction: column; /* Stack children vertically */
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center; /* Center header text */
+}
+
+h1 {
+    font-size: 28px; /* Larger font size for the main heading */
+    color: #333; /* Darker color for better visibility */
+}
+
+.logout-section {
+    text-align: center; /* Center the text */
+    margin-top: 50px; /* Add space from the top */
+    padding: 20px; /* Add padding for better spacing */
+    background-color: #fff; /* White background for the section */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.logout-section h2 {
+    font-size: 24px; /* Larger font size for the heading */
+    color: #333; /* Darker color for better visibility */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.logout-section p {
+    font-size: 16px; /* Font size for the paragraph */
+    color: #555; /* Slightly lighter color for the text */
+    margin-bottom: 30px; /* Space below the paragraph */
+}
+
+.logout-section .btn {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px; /* Space between buttons */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.logout-section .btn:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}

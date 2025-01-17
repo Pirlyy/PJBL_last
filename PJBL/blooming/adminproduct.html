@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomnest Admin - Products</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Bloomnest Admin</h2>
+            <ul>
+                <li><a href="admindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="adminusers.html"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="products.html" class="active"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="adminanalytic.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="adminsettings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="adminlogout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Products</h1>
+                <button class="btn" onclick="addProduct()">Add Product</button>
+            </header>
+            <section class="product-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productTableBody">
+                        <tr>
+                            <td>1</td>
+                            <td>Snack Tower</td>
+                            <td>IDR 150,000</td>
+                            <td>
+                                <button onclick="editProduct(1)">Edit</button>
+                                <button onclick="deleteProduct(1)">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Snack Buket</td>
+                            <td>IDR 200,000</td>
+                            <td>
+                                <button onclick="editProduct(2)">Edit</button>
+                                <button onclick="deleteProduct(2)">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Snack Uang</td>
+                            <td>IDR 100,000</td>
+                            <td>
+                                <button onclick="editProduct(3)">Edit</button>
+                                <button onclick="deleteProduct(3)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="product.js"></script>
+</body>
+</html>
