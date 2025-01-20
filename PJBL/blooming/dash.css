@@ -7,7 +7,8 @@
 html, body {
     height: 100%; /* Ensure the body takes up the full height */
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light mode background */
+    color: #333; /* Light mode text color */
 }
 
 .container {
@@ -17,7 +18,7 @@ html, body {
 
 .sidebar {
     width: 250px;
-    background: #333;
+    background: #333; /* Dark sidebar */
     color: #fff;
     padding: 20px;
     height: 100%; /* Full height of the sidebar */
@@ -66,7 +67,7 @@ header {
 }
 
 .card {
-    background: #fff;
+    background: #fff; /* Light mode card background */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -80,9 +81,38 @@ header {
 }
 
 .charts {
-    background: #fff;
+    background: #fff; /* Light mode chart background */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     height: 300px; /* Set a fixed height for the chart section */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+.sidebar.dark-mode {
+    background: #1e1e1e; /* Dark sidebar */
+}
+
+.sidebar.dark-mode h2,
+.sidebar.dark-mode ul li a {
+    color: #e0e0e0; /* Light text for sidebar links */
+}
+
+.sidebar.dark-mode ul li a:hover,
+.sidebar.dark-mode ul li a.active {
+    background: #575757; /* Darker hover effect */
+}
+
+.card.dark-mode {
+    background: #1e1e1e; /* Dark mode card background */
+    color: #e0e0e0; /* Light text color */
+}
+
+.charts.dark-mode {
+    background: #1e1e1e; /* Dark mode chart background */
 }
