@@ -7,7 +7,8 @@
 html, body {
     height: 100%; /* Ensure the body takes up the full height */
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light mode background */
+    color: #333; /* Light mode text color */
 }
 
 .container {
@@ -17,7 +18,7 @@ html, body {
 
 .sidebar {
     width: 250px;
-    background: #333;
+    background: #333; /* Dark sidebar */
     color: #fff;
     padding: 20px;
     height: 100%; /* Full height of the sidebar */
@@ -66,7 +67,7 @@ header {
 }
 
 .card {
-    background: #fff;
+    background: #fff; /* Light mode card background */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -80,7 +81,7 @@ header {
 }
 
 .charts {
-    background: #fff;
+    background: #fff; /* Light mode chart background */
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -103,7 +104,7 @@ th, td {
 }
 
 th {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light mode table header */
 }
 
 button {
@@ -111,17 +112,62 @@ button {
     margin-right: 5px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: #007BFF; /* Button color */
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Button hover color */
 }
 
 /* Chart styles */
 canvas {
     max-width: 100%; /* Ensure charts are responsive */
     height: auto; /* Maintain aspect ratio */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+.sidebar.dark-mode {
+    background: #1e1e1e; /* Dark sidebar */
+}
+
+.sidebar.dark-mode ul li a {
+    color: #e0e0e0; /* Light text for sidebar links */
+}
+
+.sidebar.dark-mode ul li a:hover,
+.sidebar.dark-mode ul li a.active {
+    background: #575757; /* Darker hover effect */
+}
+
+.card.dark-mode {
+    background: #1e1e1e; /* Dark mode card background */
+    color: #ffffff; /* Light text color */
+}
+
+.charts.dark-mode {
+    background: #1e1e1e; /* Dark mode chart background */
+}
+
+/* Dark mode styles for canvas */
+canvas.dark-mode {
+    background-color: #1e1e1e; /* Dark background for canvas */
+    border: 1px solid #333; /* Optional: border for better visibility */
+}
+
+/* Dark mode table header */
+th.dark-mode {
+    background-color: #333; /* Dark mode table header */
+    color: #e0e0e0; /* Light text color */
+}
+
+button.dark-mode {
+    background-color: #007BFF; /* Keep button color consistent */
+    color: white;
 }
