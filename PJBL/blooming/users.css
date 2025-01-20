@@ -7,7 +7,8 @@
 html, body {
     height: 100%; /* Ensure the body takes up the full height */
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light mode background */
+    color: #333; /* Light mode text color */
 }
 
 .container {
@@ -17,7 +18,7 @@ html, body {
 
 .sidebar {
     width: 250px;
-    background: #333;
+    background: #333; /* Dark sidebar */
     color: #fff;
     padding: 20px;
     height: 100%; /* Full height of the sidebar */
@@ -61,7 +62,7 @@ header {
 
 .btn {
     padding: 10px 15px;
-    background-color: #007BFF;
+    background-color: #007BFF; /* Button color */
     color: white;
     border: none;
     border-radius: 5px;
@@ -69,7 +70,7 @@ header {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Button hover color */
 }
 
 .user-list {
@@ -88,7 +89,7 @@ th, td {
 }
 
 th {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light mode table header */
 }
 
 button {
@@ -96,17 +97,55 @@ button {
     margin-right: 5px;
     border: none;
     border-radius: 5px;
-    background-color: #007BFF;
+    background-color: #007BFF; /* Button color */
     color: white;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Button hover color */
 }
 
 /* Chart styles */
 canvas {
     max-width: 100%; /* Ensure charts are responsive */
     height: auto; /* Maintain aspect ratio */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text color */
+}
+
+.sidebar.dark-mode {
+    background: #1e1e1e; /* Dark sidebar */
+}
+
+.sidebar.dark-mode h2,
+.sidebar.dark-mode ul li a {
+    color: #e0e0e0; /* Light text for sidebar links */
+}
+
+.sidebar.dark-mode ul li a:hover,
+.sidebar.dark-mode ul li a.active {
+    background: #575757; /* Darker hover effect */
+}
+
+.main-content.dark-mode {
+    background-color: #1e1e1e; /* Dark mode main content background */
+}
+
+.btn.dark-mode {
+    background-color: #007BFF; /* Keep button color consistent */
+    color: white;
+}
+
+.user-list.dark-mode {
+    background-color: #1e1e1e; /* Dark mode user list background */
+}
+
+th.dark-mode {
+    background-color: #333; /* Dark mode table header */
+    color: #e0e0e0; /* Light text color */
 }
