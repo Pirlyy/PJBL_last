@@ -155,3 +155,54 @@ h1 {
 .logout-section .btn:hover {
     background-color: #0056b3; /* Darker shade on hover */
 }
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+.sidebar.dark-mode {
+    background: #1e1e1e; /* Dark sidebar */
+}
+
+.sidebar.dark-mode h2 {
+    color: #e0e0e0; /* Light text for sidebar heading */
+}
+
+.sidebar.dark-mode ul li a {
+    color: #e0e0e0; /* Light text for sidebar links */
+}
+
+.sidebar.dark-mode ul li a:hover,
+.sidebar.dark-mode ul li a.active {
+    background: #575757; /* Darker hover effect */
+}
+
+.popup-content.dark-mode {
+    background-color: #1e1e1e; /* Dark background for the popup */
+    color: #e0e0e0; /* Light text color for the popup */
+}
+
+.btn.dark-mode {
+    background-color: #007BFF; /* Keep button color consistent */
+    color: white;
+}
+
+h1.dark-mode {
+    font-size: 20px;
+    color: #e0e0e0; /* Light color for the heading in dark mode */
+}
+
+.logout-section.dark-mode {
+    background-color: #1e1e1e; /* Dark background for the logout section */
+    color: #e0e0e0; /* Light text color for the logout section */
+}
+
+.logout-section h2.dark-mode {
+    color: #e0e0e0; /* Light text color for the heading */
+}
+
+.logout-section p.dark-mode {
+    color: #ccc; /* Slightly lighter color for the paragraph text */
+}
