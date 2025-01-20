@@ -57,6 +57,41 @@
             // Redirect to the login page (replace 'login.html' with your actual login page)
             window.location.href = 'login.html';
         }
+
+        // Function to apply the selected theme
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.sidebar').classList.add('dark-mode');
+        document.querySelector('.popup-content').classList.add('dark-mode');
+        document.querySelectorAll('.btn').forEach(btn => btn.classList.add('dark-mode'));
+        document.querySelector('.logout-section').classList.add('dark-mode');
+        document.querySelector('h1').classList.add('dark-mode'); // Add dark mode class to h1
+        document.querySelector('.logout-section h2').classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.querySelector('.sidebar').classList.remove('dark-mode');
+        document.querySelector('.popup-content').classList.remove('dark-mode');
+        document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('dark-mode'));
+        document.querySelector('.logout-section').classList.remove('dark-mode');
+        document.querySelector('h1').classList.remove('dark-mode'); // Remove dark mode class from h1
+        document.querySelector('.logout-section h2').classList.remove('dark-mode');
+    }
+}
+
+// On page load, check for saved theme preference
+window.onload = function() {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light mode
+    applyTheme(savedTheme); // Apply the saved theme
+};
+
+// Example function to toggle theme (you can call this based on user action)
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme); // Save the new theme
+    applyTheme(newTheme); // Apply the new theme
+}
     </script>
 </body>
 </html>
