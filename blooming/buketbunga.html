@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buket</title>
+  <link rel="website icon" href="Image/yess.png">
+</head>
+<body>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        justify-content: center;
+        align-items: center;
+        background-color: whitesmoke;
+        margin: 0;
+        padding: 0;
+    }
+
+    .njir {
+        cursor: pointer;
+        width: 30px;
+        height: auto;
+        margin-left: -10px;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    li, a, button {
+        font-family: "Montserrat, sans-serif";
+        font-weight: 500;
+        font-size: 16px;
+        color: rgb(0, 0, 0);
+        text-decoration: none;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 10%;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .logo {
+        cursor: pointer;
+        width: 50px;
+        height: auto;
+        margin-left: -10px;
+        border-radius: 30px;
+    }
+
+    .nav {
+        position: relative;
+    }
+
+    .nav_links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        font-family: sans-serif;
+    }
+
+    .nav_links > li {
+        position: relative;
+        margin-right: 20px; /* Adjust spacing as needed */
+        text-decoration: none;
+    }
+
+    .nav_links a {
+        text-decoration: none;
+        padding: 10px;
+        display: block;
+    }
+
+    .dropdown {
+        display: none; /* Hide dropdown by default */
+        position: absolute;
+        top: 100%; /* Position below the parent */
+        left: 0;
+        background-color: rgb(255, 255, 255); /* Background color for dropdown */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
+        z-index: 1000; /* Ensure dropdown is above other elements */
+        padding: 10px 0; /* Add padding for better spacing */
+    }
+
+    .dropdown ul {
+        list-style: none; /* Removes bullet points */
+        margin: 0; /* Removes extra spacing */
+        padding: 0; /* Removes extra padding */
+    }
+
+    .nav_links li:hover .dropdown {
+        display: block; /* Show dropdown on hover */
+    }
+
+    .dropdown li {
+        white-space: nowrap; /* Prevent text wrapping */
+        display: flex;
+    }
+
+    .dropdown a {
+        padding: 10px 20px; /* Adjust padding for dropdown items */
+        color: rgb(0, 0, 0); /* Text color for dropdown items */
+        text-decoration: none;
+    }
+
+    .dropdown a:hover {
+        background-color: #f0f0f0; /* Change background on hover */
+    }
+
+    .header {
+        text-align: center;
+        padding: 20px 0;
+        background-color: #fff;
+    }
+
+    .header h1 {
+        margin: 0;
+        font-size: 2em;
+        color: #333;
+    }
+
+    .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+    text-align: center;
+}
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tombol Log Out */
+.btn-logout {
+    background-color: #f44336; /* Warna merah */
+    color: #fff; /* Teks putih */
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    position: absolute; /* Agar posisinya di kanan */
+    right: 20px; /* Jarak dari kanan */
+    top: 9%; /* Posisi vertikal */
+    transform: translateY(-50%); /* Tengah secara vertikal */
+}
+
+.btn-logout:hover {
+    background-color: #d32f2f; /* Warna saat hover */
+}
+.container {
+    display: flex; /* Mengaktifkan Flexbox */
+    flex-wrap: wrap; /* Agar card bisa melanjutkan ke baris berikutnya jika layar tidak cukup lebar */
+    justify-content: center; /* Untuk memposisikan card di tengah secara horizontal */
+    gap: 20px; /* Jarak antar card */
+    padding: 20px; /* Padding di dalam container */
+}
+
+.card {
+    width: 300px;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    margin: 15px; /* Bisa dihapus jika menggunakan `gap` di Flexbox */
+    display: flex;
+    flex-direction: column; /* Untuk memastikan konten di dalam card tetap vertikal */
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card_content {
+    padding: 12px;
+}
+
+.card_content h3 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.card_content p {
+    color: gray;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.card_content .btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 16px;
+    color: #fff;
+}
+
+</style>
+<body>
+    <header>
+        <img class="logo" src="image/yahh.jpg" alt="logo">
+        <nav>
+            <ul class="nav_links">
+                <li>
+                    <a href="#">Category</a>
+                    <ul class="dropdown">
+                        <li><a href="buketbunga.html">Bucket Bunga</a></li>
+                        <li><a href="towersnack.html">Tower Snack</a></li>
+                        <li><a href="hantaran.html">Hantaran</a></li>
+                        <li><a href="blooming.html">Home</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Moment</a>
+                    <ul class="dropdown">
+                        <li><a href="ortu.html">Hari Ayah/Ibu</a></li>
+                        <li><a href="wisuda.html">Wisuda</a></li>
+                        <li><a href="hariguru.html">Hari Guru</a></li>
+                        <li><a href="ulangtahun.html">Ulang Tahun</a></li>
+                        <li><a href="nikahan.html">Nikahan</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+        <a href="login.html" class="btn-logout">Logout</a>
+        <a href="https://www.instagram.com/diandrahandycraft?igsh=ZG9mcnpiMWNtanpl">
+            <img src="Image/instagram.png" alt="Instagram Icon" class="njir">
+        </a>
+    </header>
+  <div class="container">
+    <div class="card">
+      <img src="Image/custom.jpg" alt="Snack Tower">
+      <h3>Snack Tower</h3>
+      <p>Snack tower enak</p>
+      <button class="btn">See More</button>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/custom2.jpg" alt="Snack Tower">
+      <h3>Snack Tower</h3>
+      <p>Snack tower enak</p>
+      <button class="btn">See More</button>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/custom3.jpg" alt="Snack Tower">
+      <h3>Snack Tower</h3>
+      <p>Snack tower enak</p>
+      <button class="btn">See More</button>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/wisuda2.jpg" alt="Snack Tower">
+      <h3>Snack Tower</h3>
+      <p>Snack tower enak</p>
+      <button class="btn">See More</button>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/wisuda4.jpg" alt="Snack Tower">
+      <h3>Snack Tower</h3>
+      <p>Snack tower enak</p>
+      <button class="btn">See More</button>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/wisuda3.jpg" alt="Snack Tower">
+      <h3>Snack Tower</h3>
+      <p>Snack tower enak</p>
+      <button class="btn">See More</button>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+  
+  </div>
+</body>
+</html>

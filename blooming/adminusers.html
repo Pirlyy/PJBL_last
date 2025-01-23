@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomnest Admin - Users</title>
+    <link rel="stylesheet" href="users.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Bloomnest Admin</h2>
+            <ul>
+                <li><a href="admindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="adminusers.html" class="active"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="adminproduct.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="adminanalytic.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="adminsettings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="adminlogout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Users</h1>
+                <button class="btn" onclick="addUser ()">Add User</button>
+            </header>
+            <section class="user-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>Admin</td>
+                            <td>
+                                <button onclick="editUser (1)">Edit</button>
+                                <button onclick="deleteUser (1)">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Jane Smith</td>
+                            <td>jane@example.com</td>
+                            <td>User</td>
+                            <td>
+                                <button onclick="editUser (2)">Edit</button>
+                                <button onclick="deleteUser (2)">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Bob Johnson</td>
+                            <td>bob@example.com</td>
+                            <td>User</td>
+                            <td>
+                                <button onclick="editUser (3)">Edit</button>
+                                <button onclick="deleteUser (3)">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+    <script src="users.js"></script>
+</body>
+</html>

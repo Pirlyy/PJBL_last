@@ -1,0 +1,159 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensure the body takes up the full height */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; /* Light mode background */
+    color: #333; /* Light mode text color */
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full height of the viewport */
+}
+
+.sidebar {
+    width: 250px;
+    background: #333; /* Dark sidebar */
+    color: #fff;
+    padding: 20px;
+    height: 100%; /* Full height of the sidebar */
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+    background: #575757;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+header {
+    margin-bottom: 20px;
+    text-align: center; /* Center header text */
+}
+
+h1 {
+    font-size: 28px; /* Larger font size for the main heading */
+    color: #333; /* Darker color for better visibility */
+}
+
+.settings-form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Additional styles for the new settings options */
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.btn {
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light text color */
+}
+
+.sidebar.dark-mode {
+    background: #1e1e1e; /* Dark sidebar */
+}
+
+.sidebar.dark-mode ul li a {
+    color: #e0e0e0; /* Light text for sidebar links */
+}
+
+.sidebar.dark-mode ul li a:hover,
+.sidebar.dark-mode ul li a.active {
+    background: #575757; /* Darker hover effect */
+}
+
+.main-content.dark-mode {
+    background-color: #1e1e1e; /* Dark background for main content */
+    color: #e0e0e0; /* Light text color */
+}
+
+input[type="text"].dark-mode,
+select.dark-mode {
+    background-color: #333; /* Dark input background */
+    color: #e0e0e0; /* Light text color */
+    border: 1px solid #555; /* Darker border */
+}
+
+button.dark-mode {
+    background-color: #007BFF; /* Keep button color consistent */
+    color: white;
+}
+

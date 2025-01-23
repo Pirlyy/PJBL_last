@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloomnest Admin - Logout</title>
+    <link rel="stylesheet" href="logout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Bloomnest Admin</h2>
+            <ul>
+                <li><a href="admindashboard.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="adminusers.html"><i class="fas fa-users"></i> Users</a></li>
+                <li><a href="adminproduct.html"><i class="fas fa-box"></i> Products</a></li>
+                <li><a href="adminanalytic.html"><i class="fas fa-chart-line"></i> Analytics</a></li>
+                <li><a href="adminsettings.html"><i class="fas fa-cog"></i> Settings</a></li>
+                <li><a href="adminlogout.html" class="active"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </aside>
+        <main class="main-content">
+            <header>
+                <h1>Logout</h1>
+            </header>
+            <section class="logout-section">
+                <h2>Are you sure you want to log out?</h2>
+                <button class="btn" id="confirmLogout">Yes, Logout</button>
+                <button class="btn" onclick="window.location.href='index.html'">Cancel</button>
+            </section>
+        </main>
+    </div>
+
+    <div id="logoutPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Logout Confirmation</h2> <!-- Added a heading for clarity -->
+            <p>Are you sure you want to log out?</p>
+            <button class="btn" onclick="redirectToLogin()">Yes, Logout</button>
+            <button class="btn" onclick="closePopup()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="logout.js"></script>
+    <script>
+        document.getElementById('confirmLogout').addEventListener('click', function() {
+            // Show the popup
+            document.getElementById('logoutPopup').style.display = 'block';
+        });
+
+        function closePopup() {
+            document.getElementById('logoutPopup').style.display = 'none';
+        }
+
+        function redirectToLogin() {
+            // Redirect to the login page (replace 'login.html' with your actual login page)
+            window.location.href = 'login.html';
+        }
+
+        // Function to apply the selected theme
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        document.querySelector('.sidebar').classList.add('dark-mode');
+        document.querySelector('.popup-content').classList.add('dark-mode');
+        document.querySelectorAll('.btn').forEach(btn => btn.classList.add('dark-mode'));
+        document.querySelector('.logout-section').classList.add('dark-mode');
+        document.querySelector('h1').classList.add('dark-mode'); // Add dark mode class to h1
+        document.querySelector('.logout-section h2').classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+        document.querySelector('.sidebar').classList.remove('dark-mode');
+        document.querySelector('.popup-content').classList.remove('dark-mode');
+        document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('dark-mode'));
+        document.querySelector('.logout-section').classList.remove('dark-mode');
+        document.querySelector('h1').classList.remove('dark-mode'); // Remove dark mode class from h1
+        document.querySelector('.logout-section h2').classList.remove('dark-mode');
+    }
+}
+
+// On page load, check for saved theme preference
+window.onload = function() {
+    const savedTheme = localStorage.getItem('theme') || 'light'; // Default to light mode
+    applyTheme(savedTheme); // Apply the saved theme
+};
+
+// Example function to toggle theme (you can call this based on user action)
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('theme', newTheme); // Save the new theme
+    applyTheme(newTheme); // Apply the new theme
+}
+    </script>
+</body>
+</html>
