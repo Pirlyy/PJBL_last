@@ -34,6 +34,7 @@
         font-size: 16px;
         color: black;
         text-decoration: none;
+        font-family: sans-serif;
     }
 
     header {
@@ -139,7 +140,7 @@
 
 /* Tombol Log Out */
 .btn-logout {
-    background-color: #f44336; /* Warna merah */
+    background-color: black; /* Warna merah */
     color: #fff; /* Teks putih */
     text-decoration: none;
     padding: 10px 20px;
@@ -154,7 +155,7 @@
 }
 
 .btn-logout:hover {
-    background-color: #d32f2f; /* Warna saat hover */
+    background-color: #333; /* Warna saat hover */
 }
 .container {
     display: flex; /* Mengaktifkan Flexbox */
@@ -180,18 +181,8 @@
 }
 
 .card_content {
-    padding: 12px;
-}
-
-.card_content h3 {
-    font-size: 20px;
-    margin-bottom: 6px;
-}
-
-.card_content p {
-    color: gray;
-    font-size: 14px;
-    line-height: 1.2;
+    text-align: center;
+     margin-bottom: 6px;
 }
 
 .card_content .btn {
@@ -218,6 +209,8 @@
     opacity: 0;
     transition: all 0.3s ease;
     z-index: 1000;
+    max-height: 100vh;
+    overflow-y: auto;
 }
 
 /* Ketika popup aktif */
@@ -292,77 +285,69 @@
 </style>
 <body>
     <header>
-        <img class="logo" src="Image/yahh.jpg" alt="logo">
+        <img class="logo" src="Image/logo.jpg" alt="logo">
         <nav>
             <ul class="nav_links">
                 <li>
-                    <a href="#">Category</a>
-                    <ul class="dropdown">
-                        <li><a href="buketbunga.html">Bucket Bunga</a></li>
-                        <li><a href="towersnack.html">Tower Snack</a></li>
-                        <li><a href="hantaran.html">Hantaran</a></li>
-                        <li><a href="blooming.html">Home</a></li>
-                    </ul>
+                    <a href="blooming.html">Home</a>
                 </li>
                 <li>
-                    <a href="#">Moment</a>
+                    <a href="#">Category</a>
                     <ul class="dropdown">
-                        <li><a href="ortu.html">Hari Ayah/Ibu</a></li>
-                        <li><a href="wisuda.html">Wisuda</a></li>
-                        <li><a href="hariguru.html">Hari Guru</a></li>
-                        <li><a href="ulangtahun.html">Ulang Tahun</a></li>
-                        <li><a href="nikahan.html">Nikahan</a></li>
+                        <li><a href="buketbunga.html">Buket Bunga</a></li>
+                        <li><a href="hantaran.html">Hantaran</a></li>
+                        <li><a href="towersnack.html">Snack Tower</a></li>
                     </ul>
                 </li>
                 <li><a href="about.html">About</a></li>
             </ul>
         </nav>
-        <a href="login.html" class="btn-logout">Logout</a>
+        <a href="login.html" class="btn-logout" onclick="logoutUser()">Logout</a>
         <a href="https://www.instagram.com/diandrahandycraft?igsh=ZG9mcnpiMWNtanpl">
-            <img src="Image/instagram.png" alt="Instagram Icon" class="njir">
+            <img src="Image/instagram.png" alt="wa" class="njir">
         </a>
     </header>
   <div class="container">
     <div class="card">
       <img src="Image/hantaran.jpg" alt="Snack Tower">
-      <h3>Hantaran Kelahiran</h3>
-      <p>IDR 55.000,00</p>
-      <a href="#" class="btn" onclick="toggle(event,'Buket Uang Ulang Tahun','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran.jpg')">See More</a>
+      <h3 class="card_content">Hantaran Kelahiran</h3>
+      <p class="card_content">IDR 55.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event,'Hantaran Kelahiran','Hantaran yang cocok buat kasih ke tetangga atau keluarga terdekat kalian yang baru saja memiliki anak', 'Image/hantaran.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
       <img src="Image/hantaran2.jpg" alt="Snack Tower">
-      <h3>Hantaran Kecantikan</h3>
-      <p>IDR 58.000</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Buket Uang Ulang Tahun','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran2  .jpg')">See More</a>
+      <h3 class="card_content">Hantaran Kecantikan</h3>
+      <p class="card_content">IDR 58.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Kecantikan','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran2.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
       <img src="Image/hantaran3.jpg" alt="Snack Tower">
-      <h3>Hantaran rumah tangga</h3>
-      <p>IDR 52.000</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Buket Uang Ulang Tahun','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran3.jpg')">See More</a>
+      <h3 class="card_content">Hantaran rumah tangga</h3>
+      <p class="card_content">IDR 52.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Rumah Tangga','Hantaran yang cocok untuk pasutri yang baru saja menikah', 'Image/hantaran3.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
       <img src="Image/hantaran4.jpg" alt="Snack Tower">
-      <h3>Hantaran Kosmetik</h3>
-      <p>IDR 62.000</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Buket Uang Ulang Tahun','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran4.jpg')">See More</a>
+      <h3 class="card_content">Hantaran Kosmetik</h3>
+      <p class="card_content">IDR 62.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Kosmetik','Hantaran yang cocok untuk kasih ke ibu kalian', 'Image/hantaran4.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
       <img src="Image/hantaran5.jpg" alt="Snack Tower">
-      <h3>Hantaran Nikah</h3>
-      <p>IDR 70.000</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Buket Uang Ulang Tahun','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran5.jpg')">See More</a>
+      <h3 class="card_content">Hantaran Nikah</h3>
+      <p class="card_content">IDR 70.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Nikah','Hantaran Yang cocok nih kalian kasih ke tmen yang lagi nikahan biar mereka makin romantis', 'Image/hantaran5.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
       <img src="Image/hantaran6.jpg" alt="Snack Tower">
-      <h3>Hantaran Kebersihan</h3>
-      <p>IDR 58.000 </p>
-      <a href="#" class="btn" onclick="toggle(event, 'Buket Uang Ulang Tahun','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran6.jpg')">See More</a>
+      <h3 class="card_content">Hantaran Kebersihan</h3>
+      <p class="card_content">IDR 58.000 </p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Kebersihan','Hantaran yang cocok untuk kalian kasih ke temen kalian yang jarang mandi nih wkwwk bercanda,kalian dapat memberikan nya sebagai ucapan selamat atas menikahnya/kelahiran anak dari teman/keluarga kalian', 'Image/hantaran6.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
   </div>
