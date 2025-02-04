@@ -1,3 +1,20 @@
+<?php
+include 'dbbloom.php'; // Koneksi ke database
+session_start();
+
+// Cek jika tombol logout ditekan dan proses logout dilakukan
+if (isset($_GET['logout'])) {
+    // Proses logout
+    session_unset();
+    session_destroy();
+    setcookie("user_session", "", time() - 3600, "/");
+    header("Location: login.php");  // Redirect setelah logout
+    exit();
+}
+
+// Jika tidak logout, tampilkan halaman dengan tombol logout
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,6 +92,22 @@
         padding: 10px;
         display: block;
     }
+
+    .nav_links .ikan::before{
+    content: '';
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 0;
+    height: 2px;    
+    background: black;
+    transition: .3s;
+}
+
+.nav_links .ikan:hover::before {
+    width: 100%;
+    box-shadow: 0 0 5px #ccc;
+}
 
     .dropdown {
         display: none; /* Hide dropdown by default */
@@ -291,17 +324,17 @@
         <nav>
             <ul class="nav_links">
                 <li>
-                    <a href="blooming.html">Home</a>
+                    <a href="blooming.html" class="ikan">Home</a>
                 </li>
                 <li>
-                    <a href="#">Category</a>
+                    <a href="#" class="ikan">Category</a>
                     <ul class="dropdown">
                         <li><a href="buketbunga.html">Buket Bunga</a></li>
                         <li><a href="hantaran.html">Hantaran</a></li>
                         <li><a href="towersnack.html">Snack Tower</a></li>
                     </ul>
                 </li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html" class="ikan">About</a></li>
             </ul>
         </nav>
         <a href="login.html" class="btn-logout" onclick="logoutUser()">Logout</a>

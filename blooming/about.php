@@ -245,17 +245,17 @@ body {
         <nav>
             <ul class="nav_links">
                 <li>
-                    <a href="blooming.html" class="ikan">Home</a>
+                    <a href="blooming.php" class="ikan">Home</a>
                 </li>
                 <li>
                     <a href="#" class="ikan">Category</a>
                     <ul class="dropdown">
-                        <li><a href="buketbunga.html">Buket Bunga</a></li>
-                        <li><a href="hantaran.html">Hantaran</a></li>
-                        <li><a href="towersnack.html">Snack Tower</a></li>
+                        <li><a href="buketbunga.php">Buket Bunga</a></li>
+                        <li><a href="hantaran.php">Hantaran</a></li>
+                        <li><a href="towersnack.php">Snack Tower</a></li>
                     </ul>
                 </li>
-                <li><a href="about.html" class="ikan">About</a></li>
+                <li><a href="about.php" class="ikan">About</a></li>
             </ul>
         </nav>
         <a href="login.html" class="btn-logout" onclick="logoutUser()">Logout</a>

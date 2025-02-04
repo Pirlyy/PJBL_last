@@ -20,14 +20,13 @@ if (isset($_GET['logout'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wisuda</title>
-  <link rel="website icon" href="Image/yess.png">
+  <title>Buket Bunga</title>
+  <link rel="website icon" href="Image/logo.jpg">
 </head>
 <body>
   <style>
     body {
-        font-family: Arial, sans-serif;
-        justify-content: center;
+        
         align-items: center;
         background-color: whitesmoke;
         margin: 0;
@@ -46,7 +45,6 @@ if (isset($_GET['logout'])) {
     }
 
     li, a, button {
-        font-family: "Montserrat, sans-serif";
         font-weight: 500;
         font-size: 16px;
         color: black;
@@ -61,6 +59,7 @@ if (isset($_GET['logout'])) {
         padding: 30px 10%;
         background-color: white;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-family: sans-serif;
     }
 
     .logo {
@@ -94,6 +93,22 @@ if (isset($_GET['logout'])) {
         display: block;
     }
 
+    .nav_links .ikan::before{
+    content: '';
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 0;
+    height: 2px;    
+    background: black;
+    transition: .3s;
+}
+
+.nav_links .ikan:hover::before {
+    width: 100%;
+    box-shadow: 0 0 5px #ccc;
+}
+
     .dropdown {
         display: none; /* Hide dropdown by default */
         position: absolute;
@@ -103,6 +118,7 @@ if (isset($_GET['logout'])) {
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional shadow */
         z-index: 1000; /* Ensure dropdown is above other elements */
         padding: 10px 0; /* Add padding for better spacing */
+
     }
 
     .dropdown ul {
@@ -129,22 +145,6 @@ if (isset($_GET['logout'])) {
     .dropdown a:hover {
         background-color: #f0f0f0; /* Change background on hover */
     }
-
-    .nav_links .ikan::before{
-    content: '';
-    position: absolute;
-    top: 75%;
-    left: 0;
-    width: 0;
-    height: 2px;    
-    background: black;
-    transition: .3s;
-}
-
-.nav_links .ikan:hover::before {
-    width: 100%;
-    box-shadow: 0 0 5px #ccc;
-}
 
     .header {
         text-align: center;
@@ -206,6 +206,7 @@ if (isset($_GET['logout'])) {
     margin: 15px; /* Bisa dihapus jika menggunakan `gap` di Flexbox */
     display: flex;
     flex-direction: column; /* Untuk memastikan konten di dalam card tetap vertikal */
+    font-family: sans-serif;
 }
 
 .card img {
@@ -220,7 +221,7 @@ if (isset($_GET['logout'])) {
 
 .card_content .btn {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 8px 16px 0;
     background-color: #333;
     text-decoration: none;
     border-radius: 4px;
@@ -242,6 +243,7 @@ if (isset($_GET['logout'])) {
     opacity: 0;
     transition: all 0.3s ease;
     z-index: 1000;
+    font-family: sans-serif;
     max-height: 100vh;
     overflow-y: auto;
 }
@@ -322,17 +324,17 @@ if (isset($_GET['logout'])) {
         <nav>
             <ul class="nav_links">
                 <li>
-                    <a href="blooming.html" class="ikan">Home</a>
+                    <a href="blooming.php" class="ikan">Home</a>
                 </li>
                 <li>
                     <a href="#" class="ikan">Category</a>
                     <ul class="dropdown">
-                        <li><a href="buketbunga.html">Buket Bunga</a></li>
-                        <li><a href="hantaran.html">Hantaran</a></li>
-                        <li><a href="towersnack.html">Snack Tower</a></li>
+                        <li><a href="buketbunga.php">Buket Bunga</a></li>
+                        <li><a href="hantaran.php">Hantaran</a></li>
+                        <li><a href="towersnack.php">Snack Tower</a></li>
                     </ul>
                 </li>
-                <li><a href="about.html" class="ikan">About</a></li>
+                <li><a href="about.php" class="ikan">About</a></li>
             </ul>
         </nav>
         <a href="login.html" class="btn-logout" onclick="logoutUser()">Logout</a>
@@ -342,24 +344,45 @@ if (isset($_GET['logout'])) {
     </header>
   <div class="container">
     <div class="card">
-      <img src="Image/tower2.jpg" alt="Snack Tower">
-      <h3 class="card_content">Snack Tower Hello Kitty</h3>
+      <img src="Image/wisuda.jpg" alt="Boneka">
+      <h3 class="card_content">Boneka buket bunga</h3>
+      <p class="card_content">IDR 55.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event,'Boneka buket bunga','Buket Indah nan keren cocok untuk wisuda dilengkapi dengan Boneka bertemakan wisuda,siap membuat moment wisuda kalian bermakna', 'Image/wisuda.jpg')">See More</a>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/ultah.jpg" alt="Money">
+      <h3 class="card_content">Money buket</h3>
+      <p class="card_content">IDR 58.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Uang Buket','Buket yang cocok nih buat teman/keluarga terdekat kamu yang lagi ulang tahun buat moment membahagiakan ini menjadi semakin menarik!!!', 'Image/ultah.jpg')">See More</a>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/ortu2.jpg" alt="Coffe">
+      <h3 class="card_content">Coffe Buket</h3>
+      <p class="card_content">IDR 52.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Coffe Buket','mau suprise in ayah? tapi bingung dia suka buket seperti apa? mungkin Coffe buket bunga bisa jadi solusi nya karena tema buket ini kesannya lelaki bngt', 'Image/ortu2.jpg')">See More</a>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/wedding.jpg" alt="Flower">
+      <h3 class="card_content">Flower Buket</h3>
       <p class="card_content">IDR 62.000,00</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Money Bucket','Bingung mau Ngasih hadiah untuk orang tua kalian? atau untuk orang dekat? Money Bucket jawabannya! Dengan desain yang menarik serta berisikan sejumlah uang, seseorang yang diberikan ini  Pasti senang. jadikanlah Money Bucket Hadiah favoritmu', 'Image/tower2.jpg')">See More</a>
+      <a href="#" class="btn" onclick="toggle(event, 'Flower Buket','Butuh Sesuatu romantis buat ibu,ucapan,atau hari spesial? buket ini sangat rekomendasi buat kamu tenang aja kok bunga nya ini bunga palsu jadinya tidak gampang layu dan pastinya moment kalian jadi lebih spesial', 'Image/wedding.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
-      <img src="Image/tower3.jpg" alt="Snack Tower">
-      <h3 class="card_content">Snack Tower little Pony</h3>
-      <p class="card_content">IDR 65.000,00</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Money Bucket','Bingung mau Ngasih hadiah untuk orang tua kalian? atau untuk orang dekat? Money Bucket jawabannya! Dengan desain yang menarik serta berisikan sejumlah uang, seseorang yang diberikan ini  Pasti senang. jadikanlah Money Bucket Hadiah favoritmu', 'Image/tower3.jpg')">See More</a>
+      <img src="Image/guru3.jpg" alt="Detergent">
+      <h3 class="card_content">Detergent Buket</h3>
+      <p class="card_content">IDR 55.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Detergent Buket','Buket dengan tema detergent cocok untuk ibu kalian yang mungkin kurang suka buket yang isinya aneh aneh dan juga buket ini cocok loh untuk perayaan hari ibu dan ngerayain hari guru biar hadiah kalian berani berbeda', 'Image/guru3.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
-      <img src="Image/tower.jpg" alt="Snack Tower">
-      <h3 class="card_content">Snack Tower Kartun</h3>
-      <p class="card_content">IDR 70.000</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Money Bucket','Bingung mau Ngasih hadiah untuk orang tua kalian? atau untuk orang dekat? Money Bucket jawabannya! Dengan desain yang menarik serta berisikan sejumlah uang, seseorang yang diberikan ini  Pasti senang. jadikanlah Money Bucket Hadiah favoritmu', 'Image/tower.jpg')">See More</a>
+      <img src="Image/custom.jpg" alt="snack">
+      <h3 class="card_content">Snack Buket</h3>
+      <p class="card_content">IDR 58.000 </p>
+      <a href="#" class="btn" onclick="toggle(event, 'Snack Buket','buket yang dilengkapi berbagai jenis macam jajan cocok untuk hari hari spesial bareng adek atau pacar kalian', 'Image/custom.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
   </div>

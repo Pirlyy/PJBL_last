@@ -1,5 +1,18 @@
 <?php
 include 'dbbloom.php'; // Koneksi ke database
+session_start();
+
+// Cek jika tombol logout ditekan dan proses logout dilakukan
+if (isset($_GET['logout'])) {
+    // Proses logout
+    session_unset();
+    session_destroy();
+    setcookie("user_session", "", time() - 3600, "/");
+    header("Location: login.php");  // Redirect setelah logout
+    exit();
+}
+
+// Jika tidak logout, tampilkan halaman dengan tombol logout
 ?>
 
 <!DOCTYPE html>
@@ -17,20 +30,20 @@ include 'dbbloom.php'; // Koneksi ke database
         <nav>
             <ul class="nav_links">
                 <li>
-                    <a href="blooming.html" class="ikan">Home</a>
+                    <a href="blooming.php" class="ikan">Home</a>
                 </li>
                 <li>
                     <a href="#" class="ikan">Category</a>
                     <ul class="dropdown">
-                        <li><a href="buketbunga.html">Buket Bunga</a></li>
-                        <li><a href="hantaran.html">Hantaran</a></li>
-                        <li><a href="towersnack.html">Snack Tower</a></li>
+                        <li><a href="buketbunga.php">Buket Bunga</a></li>
+                        <li><a href="hantaran.php">Hantaran</a></li>
+                        <li><a href="towersnack.php">Snack Tower</a></li>
                     </ul>
                 </li>
-                <li><a href="about.html" class="ikan">About</a></li>
+                <li><a href="about.php" class="ikan">About</a></li>
             </ul>
         </nav>
-        <a href="login.html" class="btn-logout" onclick="logoutUser()">Logout</a>
+        <a href="login.php" class="btn-logout" onclick="logoutUser()">Logout</a>
         <a href="https://www.instagram.com/diandrahandycraft?igsh=ZG9mcnpiMWNtanpl">
             <img src="Image/instagram.png" alt="wa" class="njir">
         </a>
@@ -193,10 +206,6 @@ window.onload = function() {
         }
     }
 };
-function logoutUser() {
-    // Hapus semua data user dari localStorage
-    localStorage.clear();
-}
 
 const observer = new IntersectionObserver(
     (entries) => {
@@ -238,3 +247,5 @@ scrollToTopButton.addEventListener("click", () => {
 </script>
 </body>
 </html>
+
+

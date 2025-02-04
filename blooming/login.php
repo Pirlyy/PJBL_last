@@ -160,7 +160,7 @@ include 'dbbloom.php'; // Koneksi ke database
         <button type="submit" class="btn" id="tmbl">Sign in</button>
 
         <div class="register-link">
-            <p>Don't have an account? <a href="register.html">Sign up</a></p>
+            <p>Don't have an account? <a href="register.php">Sign up</a></p>
         </div>
     </form>
 </div>
@@ -188,7 +188,7 @@ function login(event) {
     
     // Validasi login
     if (username === userData.username && password === userData.password) {
-        window.location.href = 'blooming.html';
+        window.location.href = 'blooming.php';
     } else {
         alert('Username atau password salah!');
     }

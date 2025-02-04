@@ -1,5 +1,5 @@
 <?php
-include 'db.php';
+include 'dbbloom.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullName = $_POST['fullName'];
@@ -13,6 +13,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $checkUser->bind_param("ss", $username, $email);
     $checkUser->execute();
     $checkUser->store_result();
+
+    if ($checkUser->num_rows > 0) {
+        echo "Username atau Email sudah terdaftar!";
+    } else {
+        // Jika username/email belum ada, masukkan ke database
+        $insertUser = $conn->prepare("INSERT INTO users (nama_lengkap, username, email, password, isAdult) VALUES (?, ?, ?, ?, ?)");
+        $insertUser->bind_param("ssssi", $nama_lengkap, $username, $email, $password, $isAdult);
+
+        if ($insertUser->execute()) {
+            echo "Pendaftaran berhasil! Silakan login.";
+            header("Location: blooming.php"); // Redirect ke halaman login
+            exit();
+        } else {
+            echo "Terjadi kesalahan: " . $conn->error;
+        }
+    }
+
+    if (!$insertUser->execute()) {
+        echo "Error: " . $conn->error;
+    }
+    
+    $checkUser->close();
+    $insertUser->close();
+    $conn->close();
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -149,22 +175,22 @@ body {
 <body>
     
     <div class="wrapper" name="myform">
-        <form onsubmit="saveToLocalStorage(event)">
+        <form action="register.php" method="POST">
             <h1>Sign Up</h1>
             <div class="input-box">
-                <input type="text" id="fullName" placeholder="Full name" required>
+                <input type="text" name="fullName" placeholder="Full name" required>
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="text" id="username" placeholder="Username" required minlength="3" maxlength="12">
+                <input type="text" name="username" placeholder="Username" required minlength="3" maxlength="12">
                 <i class='bx bxs-user'></i>
             </div>
             <div class="input-box">
-                <input type="text" id="email" placeholder="Email" required>
+                <input type="text" name="email" placeholder="Email" required>
                 <i class='bx bxl-gmail'></i>
             </div>
             <div class="input-box">
-                <input type="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" required>
                 <i class='bx bxs-lock-alt'></i>
             </div>
         
@@ -241,4 +267,3 @@ body {
     </script>
 </body>
 </html>
-?php>

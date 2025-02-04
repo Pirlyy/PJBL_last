@@ -20,7 +20,7 @@ if (isset($_GET['logout'])) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wisuda</title>
+  <title>Hantaran</title>
   <link rel="website icon" href="Image/yess.png">
 </head>
 <body>
@@ -94,6 +94,22 @@ if (isset($_GET['logout'])) {
         display: block;
     }
 
+    .nav_links .ikan::before{
+    content: '';
+    position: absolute;
+    top: 75%;
+    left: 0;
+    width: 0;
+    height: 2px;    
+    background: black;
+    transition: .3s;
+}
+
+.nav_links .ikan:hover::before {
+    width: 100%;
+    box-shadow: 0 0 5px #ccc;
+}
+
     .dropdown {
         display: none; /* Hide dropdown by default */
         position: absolute;
@@ -129,22 +145,6 @@ if (isset($_GET['logout'])) {
     .dropdown a:hover {
         background-color: #f0f0f0; /* Change background on hover */
     }
-
-    .nav_links .ikan::before{
-    content: '';
-    position: absolute;
-    top: 75%;
-    left: 0;
-    width: 0;
-    height: 2px;    
-    background: black;
-    transition: .3s;
-}
-
-.nav_links .ikan:hover::before {
-    width: 100%;
-    box-shadow: 0 0 5px #ccc;
-}
 
     .header {
         text-align: center;
@@ -322,17 +322,17 @@ if (isset($_GET['logout'])) {
         <nav>
             <ul class="nav_links">
                 <li>
-                    <a href="blooming.html" class="ikan">Home</a>
+                    <a href="blooming.php" class="ikan">Home</a>
                 </li>
                 <li>
                     <a href="#" class="ikan">Category</a>
                     <ul class="dropdown">
-                        <li><a href="buketbunga.html">Buket Bunga</a></li>
-                        <li><a href="hantaran.html">Hantaran</a></li>
-                        <li><a href="towersnack.html">Snack Tower</a></li>
+                        <li><a href="buketbunga.php">Buket Bunga</a></li>
+                        <li><a href="hantaran.php">Hantaran</a></li>
+                        <li><a href="towersnack.php">Snack Tower</a></li>
                     </ul>
                 </li>
-                <li><a href="about.html" class="ikan">About</a></li>
+                <li><a href="about." class="ikan">About</a></li>
             </ul>
         </nav>
         <a href="login.html" class="btn-logout" onclick="logoutUser()">Logout</a>
@@ -342,24 +342,45 @@ if (isset($_GET['logout'])) {
     </header>
   <div class="container">
     <div class="card">
-      <img src="Image/tower2.jpg" alt="Snack Tower">
-      <h3 class="card_content">Snack Tower Hello Kitty</h3>
+      <img src="Image/hantaran.jpg" alt="Snack Tower">
+      <h3 class="card_content">Hantaran Kelahiran</h3>
+      <p class="card_content">IDR 55.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event,'Hantaran Kelahiran','Hantaran yang cocok buat kasih ke tetangga atau keluarga terdekat kalian yang baru saja memiliki anak', 'Image/hantaran.jpg')">See More</a>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/hantaran2.jpg" alt="Snack Tower">
+      <h3 class="card_content">Hantaran Kecantikan</h3>
+      <p class="card_content">IDR 58.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Kecantikan','Buket Indah nan keren cocok untuk kado ultah', 'Image/hantaran2.jpg')">See More</a>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/hantaran3.jpg" alt="Snack Tower">
+      <h3 class="card_content">Hantaran rumah tangga</h3>
+      <p class="card_content">IDR 52.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Rumah Tangga','Hantaran yang cocok untuk pasutri yang baru saja menikah', 'Image/hantaran3.jpg')">See More</a>
+      <a href="https://Wa.me/62895609991349" class="btn">Order</a>
+    </div>
+    <div class="card">
+      <img src="Image/hantaran4.jpg" alt="Snack Tower">
+      <h3 class="card_content">Hantaran Kosmetik</h3>
       <p class="card_content">IDR 62.000,00</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Money Bucket','Bingung mau Ngasih hadiah untuk orang tua kalian? atau untuk orang dekat? Money Bucket jawabannya! Dengan desain yang menarik serta berisikan sejumlah uang, seseorang yang diberikan ini  Pasti senang. jadikanlah Money Bucket Hadiah favoritmu', 'Image/tower2.jpg')">See More</a>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Kosmetik','Hantaran yang cocok untuk kasih ke ibu kalian', 'Image/hantaran4.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
-      <img src="Image/tower3.jpg" alt="Snack Tower">
-      <h3 class="card_content">Snack Tower little Pony</h3>
-      <p class="card_content">IDR 65.000,00</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Money Bucket','Bingung mau Ngasih hadiah untuk orang tua kalian? atau untuk orang dekat? Money Bucket jawabannya! Dengan desain yang menarik serta berisikan sejumlah uang, seseorang yang diberikan ini  Pasti senang. jadikanlah Money Bucket Hadiah favoritmu', 'Image/tower3.jpg')">See More</a>
+      <img src="Image/hantaran5.jpg" alt="Snack Tower">
+      <h3 class="card_content">Hantaran Nikah</h3>
+      <p class="card_content">IDR 70.000,00</p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Nikah','Hantaran Yang cocok nih kalian kasih ke tmen yang lagi nikahan biar mereka makin romantis', 'Image/hantaran5.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
     <div class="card">
-      <img src="Image/tower.jpg" alt="Snack Tower">
-      <h3 class="card_content">Snack Tower Kartun</h3>
-      <p class="card_content">IDR 70.000</p>
-      <a href="#" class="btn" onclick="toggle(event, 'Money Bucket','Bingung mau Ngasih hadiah untuk orang tua kalian? atau untuk orang dekat? Money Bucket jawabannya! Dengan desain yang menarik serta berisikan sejumlah uang, seseorang yang diberikan ini  Pasti senang. jadikanlah Money Bucket Hadiah favoritmu', 'Image/tower.jpg')">See More</a>
+      <img src="Image/hantaran6.jpg" alt="Snack Tower">
+      <h3 class="card_content">Hantaran Kebersihan</h3>
+      <p class="card_content">IDR 58.000 </p>
+      <a href="#" class="btn" onclick="toggle(event, 'Hantaran Kebersihan','Hantaran yang cocok untuk kalian kasih ke temen kalian yang jarang mandi nih wkwwk bercanda,kalian dapat memberikan nya sebagai ucapan selamat atas menikahnya/kelahiran anak dari teman/keluarga kalian', 'Image/hantaran6.jpg')">See More</a>
       <a href="https://Wa.me/62895609991349" class="btn">Order</a>
     </div>
   </div>

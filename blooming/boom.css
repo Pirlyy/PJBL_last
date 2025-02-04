@@ -55,7 +55,6 @@ header{
     position: relative;
     margin-right: 20px; /* Adjust spacing as needed */
     font-family: sans-serif;
-   
 }
 
 .nav_links a {
@@ -80,6 +79,22 @@ header{
     list-style: none; /* Removes bullet points */
     margin: 0; /* Removes extra spacing */
     padding: 0; /* Removes extra padding */
+}
+
+.nav_links .ikan::before{
+    content: '';
+    position: absolute;
+    top: 80%;
+    left: 0;
+    width: 0;
+    height: 2px;    
+    background: black;
+    transition: .3s;
+}
+
+.nav_links .ikan:hover::before {
+    width: 100%;
+    box-shadow: 0 0 5px #ccc;
 }
 
 .nav_links li:hover .dropdown {
@@ -429,7 +444,7 @@ header{
 }
 
 .gomen {
-    padding: 380px;
+    padding: 280px;
     text-align: center;
 }
 
@@ -476,7 +491,7 @@ header{
 }
 
 .knp {
-    padding: 240px;
+    padding: 100px;
     text-align: center;
 }
 
@@ -504,9 +519,9 @@ header{
     text-align: center;
     padding: 40px;
     width: 80%;
-    max-width: 900px;
+    max-width: 200px;
     margin: 0 auto 20px;
-    padding-top: 340px;
+    padding-top: 200px;
 }
 
 .komen {
